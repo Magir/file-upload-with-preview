@@ -1,5 +1,9 @@
 # CHANGELOG.md
 
+## 4.2.0
+
+-   Added files drop support for label and preview blocks.
+
 ## 4.1.0
 
 -   Added index on delete event. Updates deps. Thank you @tasinttttttt.
