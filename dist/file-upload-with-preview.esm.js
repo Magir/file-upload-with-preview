@@ -967,7 +967,21 @@ var FileUploadWithPreview = /*#__PURE__*/function () {
       var _this = this;
 
       // Grab the current instance
-      var self = this; // Deal with the change event on the input
+      var self = this;
+      this.inputLabel.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      });
+      this.inputLabel.addEventListener('drop', function (e) {
+        e.preventDefault();
+        self.addFiles(e.dataTransfer.files);
+      });
+      this.imagePreview.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      });
+      this.imagePreview.addEventListener('drop', function (e) {
+        e.preventDefault();
+        self.addFiles(e.dataTransfer.files);
+      }); // Deal with the change event on the input
 
       self.input.addEventListener('change', function () {
         self.addFiles(this.files);

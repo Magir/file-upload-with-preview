@@ -67,6 +67,24 @@ export default class FileUploadWithPreview {
         // Grab the current instance
         const self = this
 
+        this.inputLabel.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+
+        this.inputLabel.addEventListener('drop', function (e) {
+            e.preventDefault();
+            self.addFiles(e.dataTransfer.files);
+        });
+
+        this.imagePreview.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+
+        this.imagePreview.addEventListener('drop', function (e) {
+            e.preventDefault();
+            self.addFiles(e.dataTransfer.files);
+        });
+
         // Deal with the change event on the input
         self.input.addEventListener('change', function () {
             self.addFiles(this.files)
